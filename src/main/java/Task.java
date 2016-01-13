@@ -25,3 +25,24 @@ public class Task {
   public String getDescription() {
     return mDescription;
   }
+
+  public boolean isCompleted() {
+    return mCompleted;
+  }
+
+  public LocalDateTime getCreatedAt() {
+    return mCreatedAt;
+  }
+
+  public int getId() {
+    return mId;
+  }
+
+  public void completeTask() {
+    mCompleted = true;
+  }
+
+  public static ArrayList<Task> all() {
+    return instances;
+  }
+}
