@@ -1,7 +1,8 @@
 import java.util.Map;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
-
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -44,5 +45,17 @@ public class Task {
 
   public static ArrayList<Task> all() {
     return instances;
+  }
+
+  public static Task find(int id) {
+    try {
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+}
+
+  public static void clear() {
+    instances.clear();
   }
 }
